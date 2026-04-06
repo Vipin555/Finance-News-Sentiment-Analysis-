@@ -1,0 +1,12 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+asyncpg==0.31.0
+transformers==4.57.6
+# Explicit pin to avoid building from source on Python 3.13
+tokenizers==0.22.2
+# TensorFlow backend (used by nlp_engine.py)
+tensorflow==2.21.0
+# Transformers TF support with Keras 3 often expects tf-keras
+tf-keras==2.21.0
+pydantic==2.8.2
+python-dotenv==1.0.1
