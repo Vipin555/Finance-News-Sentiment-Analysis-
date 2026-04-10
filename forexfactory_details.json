@@ -1,0 +1,578 @@
+[
+  {
+    "event_id": "146712",
+    "ff_notice": null,
+    "measures": null,
+    "usual_effect": null,
+    "frequency": null,
+    "ff_notes": "IMF meetings are usually held twice a year and are attended by the representatives of IMF and the World Bank. Meetings are open to the press and officials usually talk with reporters throughout the day. A formal statement covering policy shifts and meeting objectives is released after the meetings have concluded. Both the comments and statement can create market volatility;",
+    "why_traders_care": null
+  },
+  {
+    "event_id": "146713",
+    "ff_notice": null,
+    "measures": null,
+    "usual_effect": null,
+    "frequency": null,
+    "ff_notes": "IMF meetings are usually held twice a year and are attended by the representatives of IMF and the World Bank. Meetings are open to the press and officials usually talk with reporters throughout the day. A formal statement covering policy shifts and meeting objectives is released after the meetings have concluded. Both the comments and statement can create market volatility;",
+    "why_traders_care": null
+  },
+  {
+    "event_id": "146801",
+    "ff_notice": null,
+    "measures": "Difference in value between the federal government's income and spending during the previous month;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, usually on the eighth business day after the month ends;",
+    "ff_notes": "A positive number indicates a budget surplus, a negative number indicates a deficit;",
+    "why_traders_care": null
+  },
+  {
+    "event_id": "146946",
+    "ff_notice": null,
+    "measures": "Level of a composite index based on surveyed small businesses;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, on the second Tuesday after the month ends;",
+    "ff_notes": "Small Businesses are defined as an independent for-profit enterprise that employ between 1 and 250 people, not including the owners;",
+    "why_traders_care": null
+  },
+  {
+    "event_id": "146992",
+    "ff_notice": null,
+    "measures": "The number of individuals who filed for unemployment insurance for the first time during the past week;",
+    "usual_effect": "'Actual' less than 'Forecast' is good for currency;",
+    "frequency": "Released weekly, usually on the first Thursday after the week ends;",
+    "ff_notes": "This is the nation's earliest economic data. The market impact fluctuates from week to week - there tends to be more focus on the release when traders need to diagnose recent developments, or when the reading is at extremes;",
+    "why_traders_care": "Although it's generally viewed as a lagging indicator, the number of unemployed people is an important signal of overall economic health because consumer spending is highly correlated with labor-market conditions. Unemployment is also a major consideration for those steering the country's monetary policy;"
+  },
+  {
+    "event_id": "147386",
+    "ff_notice": null,
+    "measures": "Level of a composite index based on surveyed households;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, excluding January, about 10 days after the month ends;",
+    "ff_notes": "Above 0.0 indicates optimism, below indicates pessimism. Source changed series calculation formula as of Nov 09. Source changed release frequency from quarterly to monthly as of Feb 2024;",
+    "why_traders_care": "Financial confidence is a leading indicator of consumer spending, which accounts for a majority of overall economic activity;"
+  },
+  {
+    "event_id": "147422",
+    "ff_notice": null,
+    "measures": "Average yield on 10-year bonds the government sold at auction, and the bid-to-cover ratio of the auction;",
+    "usual_effect": "No consistent effect - there are both risk and growth implications;",
+    "frequency": "Variable, about 10 times per year;",
+    "ff_notes": "This event includes bonds with a maturity that is a few years shorter or longer than 10 years, making the data set appear more volatile than the actual 10-year interest rate. Auction results are reported in an 'X.XX|X.X' format - the first number is the average interest rate of the bonds sold, and the second number is the bid-to-cover ratio (number of bids made per bid accepted). Source does not give an exact release time - this event will be listed as 'Tentative' until the data is released;",
+    "why_traders_care": "Yields are set by bond market investors, and therefore they can be used to decipher investors' outlook on future interest rates. The bid-to-cover ratio represents bond market liquidity and demand, which can be used to gauge investor confidence;"
+  },
+  {
+    "event_id": "147473",
+    "ff_notice": null,
+    "measures": "Level of a diffusion index based on surveyed businesses, excluding the farming industry;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 10 days after the month ends;",
+    "ff_notes": "Above 0 indicates improving conditions, below indicates worsening conditions. There's a quarterly and monthly version of this survey - although the monthly survey is more timely and tends to have greater impact, the quarterly version has a larger sample size and additional questions regarding expectations;",
+    "why_traders_care": "It's a leading indicator of economic health - businesses react quickly to market conditions, and changes in their sentiment can be an early signal of future economic activity such as spending, hiring, and investment;"
+  },
+  {
+    "event_id": "147751",
+    "ff_notice": null,
+    "measures": "Change in the total inflation-adjusted value of output produced by manufacturers, mines, and utilities;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 40 days after the month ends;",
+    "ff_notes": null,
+    "why_traders_care": "It's a leading indicator of economic health - production reacts quickly to ups and downs in the business cycle and is correlated with consumer conditions such as employment levels and earnings;"
+  },
+  {
+    "event_id": "148071",
+    "ff_notice": "Release date delayed by 8 days due to the US government shutdown;",
+    "measures": "Change in the total value of new purchase orders placed with manufacturers;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 35 days after the month ends;",
+    "ff_notes": "This report contains a revision of the Durable Goods Orders data released about a week earlier, and fresh data regarding non-durable goods;",
+    "why_traders_care": "It's a leading indicator of production - rising purchase orders signal that manufacturers will increase activity as they work to fill the orders;"
+  },
+  {
+    "event_id": "148109",
+    "ff_notice": null,
+    "measures": "Change in the level of a diffusion index based on surveyed consumers;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, usually on the second Tuesday of the current month;",
+    "ff_notes": "The impact tends to be mild but varies from month to month due to volatility in the data set;",
+    "why_traders_care": "Financial confidence is a leading indicator of consumer spending, which accounts for a majority of overall economic activity;"
+  },
+  {
+    "event_id": "148193",
+    "ff_notice": null,
+    "measures": "Change in the total value of goods held in inventory by wholesalers;",
+    "usual_effect": "'Actual' less than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 40 days after the month ends;",
+    "ff_notes": "The 'Previous' listed is the 'Actual' from the Preliminary release and therefore the 'History' data will appear unconnected. There are 2 versions of this indicator released about a week apart - Preliminary and Final. The Preliminary release, which the source first reported in Aug 2016, is the earliest and thus tends to have the most impact;",
+    "why_traders_care": "It's a signal of future business spending because companies are more likely to purchase goods once they have depleted inventories;"
+  },
+  {
+    "event_id": "148229",
+    "ff_notice": "Release date delayed by 13 days due to the US government shutdown;",
+    "measures": "Change in the price of goods and services purchased by consumers, excluding food and energy;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 29 days after the month ends;",
+    "ff_notes": "Differs from Core CPI in that it only measures goods and services targeted towards and consumed by individuals. Prices are weighted according to total expenditure per item which gives important insights into consumer spending behavior. CPI is released about 10 days earlier and tends to garner most of the attention;",
+    "why_traders_care": "It's the Federal Reserve's primary inflation measure. Inflation is important to currency valuation because rising prices lead the central bank to raise interest rates out of respect for their inflation containment mandate;"
+  },
+  {
+    "event_id": "148241",
+    "ff_notice": "Release date delayed by 13 days due to the US government shutdown;",
+    "measures": "Change in the total value of income received from all sources by consumers;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 29 days after the month ends;",
+    "ff_notes": null,
+    "why_traders_care": "Income is correlated with spending - the more disposable income consumers have, the more likely they are to increase spending;"
+  },
+  {
+    "event_id": "148253",
+    "ff_notice": "Release date delayed by 13 days due to the US government shutdown;",
+    "measures": "Change in the inflation-adjusted value of all expenditures by consumers;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 29 days after the month ends;",
+    "ff_notes": "This is significant data, though it tends to have a relatively mild impact because Retail Sales, which also covers consumer spending, is released about 2 weeks earlier;",
+    "why_traders_care": "Consumer spending accounts for a majority of overall economic activity. It's one of the most important gauges of economic health due to the vast ripple effect consumer buying creates in the economy;"
+  },
+  {
+    "event_id": "148307",
+    "ff_notice": "Release date delayed by 13 days due to the US government shutdown;",
+    "measures": "Annualized change in the inflation-adjusted value of all goods and services produced by the economy;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released quarterly, about 85 days after the quarter ends;",
+    "ff_notes": "While this is q/q data, it's reported in an annualized format (quarterly change x4). The 'Previous' listed is the 'Actual' from the Preliminary release and therefore the 'History' data will appear unconnected. There are 3 versions of GDP released a month apart - Advance, Preliminary, and Final. The Advance release is the earliest and thus tends to have the most impact;",
+    "why_traders_care": "It's the broadest measure of economic activity and the primary gauge of the economy's health;"
+  },
+  {
+    "event_id": "148314",
+    "ff_notice": "Release date delayed by 13 days due to the US government shutdown; Source released data 3 minutes later than scheduled;",
+    "measures": "Annualized change in the price of all goods and services included in GDP;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released quarterly, about 85 days after the quarter ends;",
+    "ff_notes": "While this is q/q data, it's reported in an annualized format (quarterly change x4). The 'Previous' listed is the 'Actual' from the Preliminary release and therefore the 'History' data will appear unconnected;",
+    "why_traders_care": null
+  },
+  {
+    "event_id": "148329",
+    "ff_notice": null,
+    "measures": "Change in the price of goods and services purchased by consumers;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 11 days after the month ends;",
+    "ff_notes": null,
+    "why_traders_care": "Consumer prices account for a majority of overall inflation. Inflation is important to currency valuation because rising prices lead the central bank to raise interest rates out of respect for their inflation containment mandate;"
+  },
+  {
+    "event_id": "148346",
+    "ff_notice": null,
+    "measures": "Change in the price of goods and services purchased by consumers;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 11 days after the month ends;",
+    "ff_notes": "This is among the few non-seasonally adjusted numbers reported on the calendar;",
+    "why_traders_care": "Consumer prices account for a majority of overall inflation. Inflation is important to currency valuation because rising prices lead the central bank to raise interest rates out of respect for their inflation containment mandate;"
+  },
+  {
+    "event_id": "148360",
+    "ff_notice": null,
+    "measures": "Change in the price of goods and services purchased by consumers, excluding food and energy;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 11 days after the month ends;",
+    "ff_notes": "Food and energy prices account for about a quarter of CPI, but they tend to be very volatile and distort the underlying trend. The Federal Open Market Committee usually pays more attention to the Core data - so do traders;",
+    "why_traders_care": "Consumer prices account for a majority of overall inflation. Inflation is important to currency valuation because rising prices lead the central bank to raise interest rates out of respect for their inflation containment mandate;"
+  },
+  {
+    "event_id": "148379",
+    "ff_notice": null,
+    "measures": "Change in the price of finished goods and services sold by producers;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 13 days after the month ends;",
+    "ff_notes": "Source changed series calculation formula as of Feb 2014;",
+    "why_traders_care": "It's a leading indicator of consumer inflation - when producers charge more for goods and services the higher costs are usually passed on to the consumer;"
+  },
+  {
+    "event_id": "148398",
+    "ff_notice": null,
+    "measures": "Change in the price of finished goods and services sold by producers, excluding food and energy;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 13 days after the month ends;",
+    "ff_notes": "Source changed series calculation formula as of Feb 2014. Food and energy prices make up about 40% of overall PPI which tends to mute the importance of the Core data;",
+    "why_traders_care": null
+  },
+  {
+    "event_id": "148573",
+    "ff_notice": null,
+    "measures": "Level of a composite index based on surveyed consumers;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, around the middle of the current month;",
+    "ff_notes": "There are 2 versions of this data released 14 days apart – Preliminary and Revised. The Preliminary release is the earlier and thus tends to have the most impact;",
+    "why_traders_care": "Financial confidence is a leading indicator of consumer spending, which accounts for a majority of overall economic activity;"
+  },
+  {
+    "event_id": "148585",
+    "ff_notice": null,
+    "measures": "Percentage that consumers expect the price of goods and services to change during the next 12 months;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, around the middle of the current month;",
+    "ff_notes": "There are 2 versions of this data released 14 days apart – Preliminary and Revised. The Preliminary release is the earlier and thus tends to have the most impact;",
+    "why_traders_care": "Expectations of future inflation can manifest into real inflation, primarily because workers tend to push for higher wages when they believe prices will rise;"
+  },
+  {
+    "event_id": "148699",
+    "ff_notice": null,
+    "measures": "Change in the total quantity of domestic currency in circulation and deposited in banks;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 11 days after the month ends;",
+    "ff_notes": "Much of this data is released in the Monetary Base report about a week earlier;",
+    "why_traders_care": "It's positively correlated with interest rates - early in the economic cycle an increasing supply of money leads to additional spending and investment, and later in the cycle expanding money supply leads to inflation;"
+  },
+  {
+    "event_id": "148747",
+    "ff_notice": null,
+    "measures": "Change in the number of cubic feet of natural gas held in underground storage during the past week;",
+    "usual_effect": "'Actual' less than 'Forecast' is good for currency;",
+    "frequency": "Released weekly, 5 days after the week ends;",
+    "ff_notes": "Inventories are used to maintain price stability during supply shortages and periods of increasing demand;",
+    "why_traders_care": null
+  },
+  {
+    "event_id": "148798",
+    "ff_notice": null,
+    "measures": "Level of a composite index based on surveyed households, excluding single-person homes;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 3 days after the month ends;",
+    "ff_notes": null,
+    "why_traders_care": "Financial confidence is a leading indicator of consumer spending, which accounts for a majority of overall economic activity;"
+  },
+  {
+    "event_id": "148839",
+    "ff_notice": null,
+    "measures": "Change in the total value of outstanding bank loans issued to consumers and businesses;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 9 days after the month ends;",
+    "ff_notes": null,
+    "why_traders_care": "Borrowing and spending are positively correlated - consumers and businesses tend to seek credit when they are confident in their future financial position and feel comfortable spending money;"
+  },
+  {
+    "event_id": "148908",
+    "ff_notice": null,
+    "measures": "Highest yield on 30-year bonds the government sold at auction, and the bid-to-cover ratio of the auction;",
+    "usual_effect": "No consistent effect - there are both risk and growth implications;",
+    "frequency": "Conducted monthly;",
+    "ff_notes": "Auction results are reported in an 'X.XX|X.X' format - the first number is the highest interest rate of the bonds sold, and the second number is the bid-to-cover ratio (number of bids made per bid accepted);",
+    "why_traders_care": "Yields are set by bond market investors, and therefore they can be used to decipher investors' outlook on future interest rates. The bid-to-cover ratio represents bond market liquidity and demand, which can be used to gauge investor confidence;"
+  },
+  {
+    "event_id": "149129",
+    "ff_notice": null,
+    "measures": "Change in the number of short-term overseas visitors who arrived in the country;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 45 days after the month ends;",
+    "ff_notes": null,
+    "why_traders_care": "Tourism plays an important role in the economy - about 7% of the population is employed by the tourism industry, and a sizable portion of the nation's GDP is indirectly related to tourism;"
+  },
+  {
+    "event_id": "149186",
+    "ff_notice": null,
+    "measures": "Percentage of the total work force that is unemployed and actively seeking employment during the previous month;",
+    "usual_effect": "'Actual' less than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, on the first or second Friday after the month ends;",
+    "ff_notes": null,
+    "why_traders_care": "Although it's generally viewed as a lagging indicator, the number of unemployed people is an important signal of overall economic health because consumer spending is highly correlated with labor-market conditions;"
+  },
+  {
+    "event_id": "149187",
+    "ff_notice": null,
+    "measures": "Change in the number of employed people during the previous month;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, on the first or second Friday after the month ends;",
+    "ff_notes": "This is vital economic data released shortly after the month ends. The combination of importance and earliness makes for hefty market impacts;",
+    "why_traders_care": "Job creation is an important leading indicator of consumer spending, which accounts for a majority of overall economic activity;"
+  },
+  {
+    "event_id": "149299",
+    "ff_notice": null,
+    "measures": "Change in the total value of new building permits issued;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 40 days after the month ends;",
+    "ff_notes": null,
+    "why_traders_care": "It's an excellent gauge of future construction activity because obtaining a permit is among the first steps in constructing a new building;"
+  },
+  {
+    "event_id": "149342",
+    "ff_notice": null,
+    "measures": "Level of a diffusion index based on surveyed manufacturers;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 13 days after the month ends;",
+    "ff_notes": "Above 50.0 indicates expansion, below indicates contraction;",
+    "why_traders_care": null
+  },
+  {
+    "event_id": "149354",
+    "ff_notice": null,
+    "measures": "Level of a diffusion index based on surveyed purchasing managers in the services industry;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 15 days after the month ends;",
+    "ff_notes": "Above 50.0 indicates expansion, below indicates contraction;",
+    "why_traders_care": null
+  },
+  {
+    "event_id": "149681",
+    "ff_notice": null,
+    "measures": "Change in the total inflation-adjusted value of output produced by manufacturers, mines, and utilities;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 45 days after the month ends;",
+    "ff_notes": "The 'Previous' listed is the 'Actual' from the Preliminary release and therefore the 'History' data will appear unconnected. There are 2 versions of this indicator released about 15 days apart - Preliminary and Revised. The Preliminary release is the earliest and thus tends to have the most impact;",
+    "why_traders_care": "It's a leading indicator of economic health - production reacts quickly to ups and downs in the business cycle and is correlated with consumer conditions such as employment levels and earnings;"
+  },
+  {
+    "event_id": "149693",
+    "ff_notice": null,
+    "measures": "Change in the total value of new orders placed with machine tool manufacturers;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 10 days after the month ends;",
+    "ff_notes": "There are 2 versions of this report released about a week apart - Preliminary and Final. The Preliminary release is the earliest and thus tends to have the most impact. The Final is not reported for lack of significance;",
+    "why_traders_care": null
+  },
+  {
+    "event_id": "149827",
+    "ff_notice": null,
+    "measures": "Annualized number of residential buildings that were sold during the previous month, excluding new construction;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 12 days after the month ends;",
+    "ff_notes": "While this is monthly data, it's reported in an annualized format (monthly figure x12);",
+    "why_traders_care": "It's a leading indicator of economic health because the sale of a home triggers a wide-reaching ripple effect. For example, renovations are done by the new owners, a mortgage is sold by the financing bank, and brokers are paid to execute the transaction;"
+  },
+  {
+    "event_id": "149937",
+    "ff_notice": null,
+    "measures": "Change in the price of goods sold by corporations;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 12 days after the month ends;",
+    "ff_notes": null,
+    "why_traders_care": "It's a leading indicator of consumer inflation - when corporations raise the price of their goods the higher costs are usually passed on to the consumer;"
+  },
+  {
+    "event_id": "150143",
+    "ff_notice": null,
+    "measures": "Change in the total quantity of domestic currency in circulation and deposited in banks;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 13 days after the month ends;",
+    "ff_notes": "Source does not have a reliable release schedule - this event will be listed with a date range or as 'Tentative' until the data is released;",
+    "why_traders_care": "It's positively correlated with interest rates - early in the economic cycle an increasing supply of money leads to additional spending and investment, and later in the cycle expanding money supply leads to inflation;"
+  },
+  {
+    "event_id": "150144",
+    "ff_notice": null,
+    "measures": "Value of new yuan-denominated loans issued to consumers and businesses during the previous month;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 13 days after the month ends;",
+    "ff_notes": "Source does not have a reliable release schedule - this event will be listed with a date range or as 'Tentative' until the data is released;",
+    "why_traders_care": "Borrowing and spending are positively correlated - consumers and businesses tend to seek credit when they are confident in their future financial position and feel comfortable spending money;"
+  },
+  {
+    "event_id": "150181",
+    "ff_notice": null,
+    "measures": "Change in the price of goods and services purchased by consumers;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, usually about 10 days after the month ends;",
+    "ff_notes": null,
+    "why_traders_care": "Consumer prices account for a majority of overall inflation. Inflation is important to currency valuation because rising prices lead the central bank to respond by raising interest rates;"
+  },
+  {
+    "event_id": "150182",
+    "ff_notice": null,
+    "measures": "Change in the price of goods purchased and sold by producers;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, usually about 10 days after the month ends;",
+    "ff_notes": null,
+    "why_traders_care": "It's a leading indicator of consumer inflation - when producers pay and charge more for goods the higher costs are usually passed on to the consumer;"
+  },
+  {
+    "event_id": "150224",
+    "ff_notice": null,
+    "measures": "Difference in value between imported and exported goods during the previous month;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, excluding Feb, about 10 days after the month ends;",
+    "ff_notes": "Source does not have a reliable release schedule - this event will be listed with a date range or as 'Tentative' until the data is released. A positive number indicates that more goods were exported than imported. Source first reported this Yuan-denominated data in Feb 2015;",
+    "why_traders_care": "Export demand and currency demand are directly linked because foreigners usually buy the domestic currency to pay for the nation's exports. Export demand also impacts production and prices at domestic manufacturers;"
+  },
+  {
+    "event_id": "150225",
+    "ff_notice": null,
+    "measures": "Trade Balance in US Dollars terms;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, excluding Feb, about 10 days after the month ends;",
+    "ff_notes": "Source does not have a reliable release schedule - this event will be listed with a date range or as 'Tentative' until the data is released. Tends to have a muted impact because similar insights are included with the Yuan-denominated Trade Balance, released about an hour earlier;",
+    "why_traders_care": null
+  },
+  {
+    "event_id": "150697",
+    "ff_notice": null,
+    "measures": null,
+    "usual_effect": null,
+    "frequency": "Released quarterly, around 15 days after the quarter ends;",
+    "ff_notes": "This report includes detailed data on secured and unsecured lending to households, small businesses, non-financial corporations, and non-bank financial firms. Source first released in Sep 2007;",
+    "why_traders_care": "It's correlated with spending and confidence - rising debt levels are a sign that lenders feel comfortable issuing loans, and that consumers and businesses are confident in their financial position and eager to spend money;"
+  },
+  {
+    "event_id": "150823",
+    "ff_notice": null,
+    "measures": "Change in the value of same-store sales at the retail level;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, usually the first Tuesday after the month ends;",
+    "ff_notes": "Leads the government-released retail data by about 10 days, but has a narrower focus as it only includes retailers who belong to the BRC. Full reports are only available to BRC subscribers;",
+    "why_traders_care": null
+  },
+  {
+    "event_id": "151029",
+    "ff_notice": null,
+    "measures": "Estimated average weekly change in the number of employed people during the previous 4 weeks, excluding the farming industry and government;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released weekly, on the first Tuesday about 2 weeks after the rolling four-week period ends;",
+    "ff_notes": "This is high-frequency private-sector employment data based on a rolling four-week average, and tends to be more volatile than the monthly ADP Employment Report. The release is skipped in any week that overlaps with publication of the monthly ADP Employment Report. Source first released in Oct 2025;",
+    "why_traders_care": "Job creation is an important leading indicator of consumer spending, which accounts for a majority of overall economic activity;"
+  },
+  {
+    "event_id": "151136",
+    "ff_notice": null,
+    "measures": "Change in the total inflation-adjusted value of output produced by manufacturers, mines, and utilities;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 40 days after the month ends;",
+    "ff_notes": null,
+    "why_traders_care": "It's a leading indicator of economic health - production reacts quickly to ups and downs in the business cycle and is correlated with consumer conditions such as employment levels and earnings;"
+  },
+  {
+    "event_id": "151137",
+    "ff_notice": null,
+    "measures": "Difference in value between imported and exported goods during the reported month;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 40 days after the month ends;",
+    "ff_notes": "This is the seasonally adjusted data (as most FF numbers are), not to be confused with the non-seasonally adjusted number reported by some news agencies. A positive number indicates that more goods were exported than imported;",
+    "why_traders_care": "Export demand and currency demand are directly linked because foreigners must buy the domestic currency to pay for the nation's exports. Export demand also impacts production and prices at domestic manufacturers;"
+  },
+  {
+    "event_id": "151138",
+    "ff_notice": null,
+    "measures": "Change in the price of goods and services purchased by consumers;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 11 days after the month ends;",
+    "ff_notes": "The 'Previous' listed is the 'Actual' from the Preliminary release and therefore the 'History' data will appear unconnected. There are 2 versions of CPI released about 15 days apart - Preliminary and Final. The Preliminary release is the earliest and thus tends to have the most impact;",
+    "why_traders_care": null
+  },
+  {
+    "event_id": "151139",
+    "ff_notice": null,
+    "measures": "Change in the price of goods sold by wholesalers;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 12 days after the month ends;",
+    "ff_notes": null,
+    "why_traders_care": "It's a leading indicator of consumer inflation - when wholesalers charge more for goods and services the higher costs are usually passed on to the consumer;"
+  },
+  {
+    "event_id": "151501",
+    "ff_notice": null,
+    "measures": "Change in the level of a composite index based on 7 economic indicators;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 45 days after the month ends;",
+    "ff_notes": "This index is designed to predict the direction of the economy, but it tends to have a muted impact because most of the indicators used in the calculation are released previously;",
+    "why_traders_care": null
+  },
+  {
+    "event_id": "152797",
+    "ff_notice": null,
+    "measures": "Level of a diffusion index based on surveyed property surveyors;",
+    "usual_effect": "'Actual' greater than 'Forecast' is good for currency;",
+    "frequency": "Released monthly, about 11 days after the month ends;",
+    "ff_notes": "Data represents the percentage of surveyors reporting a price increase in their designated area. Above 0.0% indicates more surveyors reported a rise in prices, below indicates more reported a fall;",
+    "why_traders_care": "It's a leading indicator of housing inflation because surveyors have access to the most recent price data by virtue of their job;"
+  },
+  {
+    "event_id": "152801",
+    "ff_notice": null,
+    "measures": null,
+    "usual_effect": "More hawkish than expected is good for currency;",
+    "frequency": null,
+    "ff_notes": "SNB Chairman from Oct 2024 - July 2027. Volatility is sometimes experienced during his speeches as traders attempt to decipher interest rate clues;",
+    "why_traders_care": "As head of the central bank, which controls short term interest rates, he has more influence over the nation's currency value than any other person. Traders scrutinize his public engagements as they are often used to drop subtle clues regarding future monetary policy;"
+  },
+  {
+    "event_id": "152813",
+    "ff_notice": null,
+    "measures": null,
+    "usual_effect": "More hawkish than expected is good for currency;",
+    "frequency": null,
+    "ff_notes": "Deputy Governor from Feb 2024;",
+    "why_traders_care": "He's responsible for advising Reserve Bank Board members - who decide where to set the nation's key interest rates - on matters relating to economics, and his public engagements are often used to drop subtle clues regarding future policy shifts;"
+  },
+  {
+    "event_id": "152818",
+    "ff_notice": null,
+    "measures": null,
+    "usual_effect": "More hawkish than expected is good for currency;",
+    "frequency": null,
+    "ff_notes": "BOE Governor Mar 2020 - Mar 2028. Volatility is often experienced during his speeches as traders attempt to decipher interest rate clues;",
+    "why_traders_care": "As head of the central bank, which controls short term interest rates, he has more influence over the nation's currency value than any other person. Traders scrutinize his public engagements as they are often used to drop subtle clues regarding future monetary policy;"
+  },
+  {
+    "event_id": "152819",
+    "ff_notice": null,
+    "measures": null,
+    "usual_effect": "More hawkish than expected is good for currency;",
+    "frequency": null,
+    "ff_notes": "MPC voting member Jul 2023 - Jun 2026;",
+    "why_traders_care": "BOE MPC members vote on where to set the nation's key interest rates and their public engagements are often used to drop subtle clues regarding future monetary policy;"
+  },
+  {
+    "event_id": "152824",
+    "ff_notice": null,
+    "measures": null,
+    "usual_effect": "More hawkish than expected is good for currency;",
+    "frequency": null,
+    "ff_notes": "FOMC voting member 2023 and 2025;",
+    "why_traders_care": "Federal Reserve FOMC members vote on where to set the nation's key interest rates and their public engagements are often used to drop subtle clues regarding future monetary policy;"
+  },
+  {
+    "event_id": "152825",
+    "ff_notice": null,
+    "measures": null,
+    "usual_effect": "More hawkish than expected is good for currency;",
+    "frequency": null,
+    "ff_notes": "FOMC voting member Jul 2022 - Jan 2032;",
+    "why_traders_care": "Federal Reserve FOMC members vote on where to set the nation's key interest rates and their public engagements are often used to drop subtle clues regarding future monetary policy;"
+  },
+  {
+    "event_id": "152826",
+    "ff_notice": null,
+    "measures": null,
+    "usual_effect": "More hawkish than expected is good for currency;",
+    "frequency": null,
+    "ff_notes": "FOMC voting member 2018, 2021, and 2024;",
+    "why_traders_care": "Federal Reserve FOMC members vote on where to set the nation's key interest rates and their public engagements are often used to drop subtle clues regarding future monetary policy;"
+  },
+  {
+    "event_id": "152827",
+    "ff_notice": null,
+    "measures": null,
+    "usual_effect": "More hawkish than expected is good for currency;",
+    "frequency": null,
+    "ff_notes": "FOMC voting member 2022 and 2025;",
+    "why_traders_care": "Federal Reserve FOMC members vote on where to set the nation's key interest rates and their public engagements are often used to drop subtle clues regarding future monetary policy;"
+  },
+  {
+    "event_id": "152828",
+    "ff_notice": null,
+    "measures": null,
+    "usual_effect": "More hawkish than expected is good for currency;",
+    "frequency": null,
+    "ff_notes": "FOMC voting member 2026;",
+    "why_traders_care": "Federal Reserve FOMC members vote on where to set the nation's key interest rates and their public engagements are often used to drop subtle clues regarding future monetary policy;"
+  },
+  {
+    "event_id": "152831",
+    "ff_notice": null,
+    "measures": null,
+    "usual_effect": "More hawkish than expected is good for currency;",
+    "frequency": null,
+    "ff_notes": "MPC voting member Sep 2021 - Aug 2027;",
+    "why_traders_care": "BOE MPC members vote on where to set the nation's key interest rates and their public engagements are often used to drop subtle clues regarding future monetary policy;"
+  }
+]
