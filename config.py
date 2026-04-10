@@ -45,13 +45,24 @@ class Settings:
     )
 
     # ── Signal label thresholds ───────────────────────────────────────────────
-    BULLISH_THRESHOLD: float = 0.15
-    BEARISH_THRESHOLD: float = -0.15
+    # Lowered from ±0.15 → ±0.08 to capture moderate but real directional bias
+    BULLISH_THRESHOLD: float = 0.08
+    BEARISH_THRESHOLD: float = -0.08
 
-    # ── Aggregation windows (hours) ──────────────────────────────────────────
-    SIGNAL_WINDOWS_HOURS: List[int] = field(
-        default_factory=lambda: [1, 4, 24]
+    # ── Storage filters (real-world two-phase approach) ───────────────────────
+    # POST-release: event has actual data → use combined deviation+NLP confidence
+    POST_RELEASE_MIN_CONFIDENCE: float = float(
+        os.getenv("POST_RELEASE_MIN_CONFIDENCE", "0.45")
     )
+    # PRE-release: event not yet released → use NLP certainty gated by impact
+    # Only store directional signals where the impact justifies the uncertainty
+    PRE_RELEASE_NLP_THRESHOLDS: Dict[str, float] = field(default_factory=lambda: {
+        "red":     0.10,   # High impact (NFP, CPI, Fed) – low bar
+        "orange":  0.13,   # Medium-high
+        "yellow":  0.20,   # Medium – needs stronger NLP signal
+        "green":   0.99,   # Low impact – never store pre-release
+        "unknown": 0.99,
+    })
 
     # ── FastAPI server ────────────────────────────────────────────────────────
     HOST: str = os.getenv("HOST", "0.0.0.0")

@@ -40,6 +40,7 @@ async def get_pool() -> asyncpg.Pool:
             min_size=2,
             max_size=10,
             command_timeout=30,
+            statement_cache_size=0,
         )
         logger.info("Database connection pool created.")
     return _pool
@@ -267,18 +268,23 @@ async def upsert_sentiment_result(result: Dict[str, Any]) -> None:
             """
             INSERT INTO ff_sentiment_results (
                 calendar_event_id, event_id, currency, impact, event_name,
+                event_date, event_time, pre_release,
                 deviation_score, deviation_confidence,
                 nlp_positive, nlp_negative, nlp_neutral, nlp_score,
                 composite_score, xauusd_signal,
                 label, confidence, reasoning
             ) VALUES (
                 $1,  $2,  $3,  $4,  $5,
-                $6,  $7,
-                $8,  $9,  $10, $11,
-                $12, $13,
-                $14, $15, $16::jsonb
+                $6,  $7,  $8,
+                $9,  $10,
+                $11, $12, $13, $14,
+                $15, $16,
+                $17, $18, $19::jsonb
             )
             ON CONFLICT (calendar_event_id) DO UPDATE SET
+                event_date           = EXCLUDED.event_date,
+                event_time           = EXCLUDED.event_time,
+                pre_release          = EXCLUDED.pre_release,
                 deviation_score      = EXCLUDED.deviation_score,
                 deviation_confidence = EXCLUDED.deviation_confidence,
                 nlp_positive         = EXCLUDED.nlp_positive,
@@ -297,6 +303,9 @@ async def upsert_sentiment_result(result: Dict[str, Any]) -> None:
             result.get("currency"),
             result.get("impact"),
             result.get("event_name"),
+            result.get("event_date"),
+            result.get("event_time"),
+            result.get("pre_release", True),
             result["deviation_score"],
             result["deviation_confidence"],
             result["nlp_positive"],
@@ -309,3 +318,4 @@ async def upsert_sentiment_result(result: Dict[str, Any]) -> None:
             result["confidence"],
             reasoning,
         )
+

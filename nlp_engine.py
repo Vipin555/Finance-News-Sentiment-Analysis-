@@ -13,13 +13,23 @@ Output labels from ProsusAI/finbert
 
 score = positive_prob - negative_prob  ∈ [-1, +1]
 """
+import os
+import warnings
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
+warnings.filterwarnings("ignore", category=FutureWarning)
+
 import logging
 import re
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
 
 import tensorflow as tf
+tf.get_logger().setLevel('ERROR')
+
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
+import transformers
+transformers.logging.set_verbosity_error()
 
 from config import settings
 

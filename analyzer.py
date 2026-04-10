@@ -21,13 +21,12 @@ from config import settings
 from database import (
     fetch_enriched_event_by_calendar_id,
     fetch_recent_enriched_events,
-    fetch_sentiment_window,
     fetch_todays_events,
     upsert_sentiment_result,
 )
+
 from deviation_scorer import DeviationResult, compute_deviation_score
 from nlp_engine import NLPResult, finbert
-from signal_aggregator import AggregatedSignal, aggregate_signals
 
 logger = logging.getLogger(__name__)
 
@@ -138,6 +137,9 @@ def _build_result(
         "currency":             event.get("currency"),
         "impact":               event.get("impact"),
         "event_name":           event.get("event_name"),
+        "event_date":           event.get("calendar_date"),
+        "event_time":           event.get("time"),
+        "pre_release":          not bool(event.get("actual")),  # True = actual not yet published
         # ── Deviation layer ──
         "deviation_score":      round(dev.xauusd_score, 4),
         "deviation_confidence": round(dev.confidence, 4),
@@ -153,6 +155,58 @@ def _build_result(
         "confidence":           round(conf, 4),
         "reasoning":            reasoning,
     }
+
+
+# ---------------------------------------------------------------------------
+# Storage gate (two-phase: pre-release vs post-release)
+# ---------------------------------------------------------------------------
+
+def _nlp_certainty(nlp: NLPResult) -> float:
+    """How far FinBERT is from a uniform 1/3 distribution (0 = random, 1 = certain)."""
+    raw = max(nlp.positive, nlp.negative, nlp.neutral) - 0.333
+    return max(0.0, raw) / 0.667
+
+
+def _impact_key(impact: Optional[str]) -> str:
+    """Normalise impact string to config key."""
+    s = (impact or "").lower().strip()
+    if s.startswith("ff-impact-"):
+        s = s[len("ff-impact-"):]
+    return {"yel": "yellow", "grn": "green", "org": "orange"}.get(s, s)
+
+
+def _should_store(result: Dict[str, Any], nlp: NLPResult) -> tuple[bool, str]:
+    """
+    Two-phase gate:
+
+    POST-release (actual data present):
+      • Label must be BULLISH or BEARISH (signal >= ±0.08)
+      • Combined confidence must be >= POST_RELEASE_MIN_CONFIDENCE (0.45)
+      → Merges deviation + NLP, so we trust this signal strongly.
+
+    PRE-release (no actual yet):
+      • Label must be BULLISH or BEARISH
+      • NLP certainty must clear an impact-weighted bar:
+          red >= 0.10, orange >= 0.13, yellow >= 0.20, green/unknown = never
+      → Pre-release signals are leading indicators; stored for high-impact
+        events where even NLP-only direction has trading relevance.
+    """
+    if result["label"] == "NEUTRAL":
+        return False, "NEUTRAL signal"
+
+    if not result["pre_release"]:
+        # POST-release
+        if result["confidence"] < settings.POST_RELEASE_MIN_CONFIDENCE:
+            return False, f"post-release conf {result['confidence']:.4f} < {settings.POST_RELEASE_MIN_CONFIDENCE}"
+        return True, "post-release BULLISH/BEARISH"
+    else:
+        # PRE-release: gate on impact-weighted NLP certainty
+        imp_key = _impact_key(result.get("impact"))
+        threshold = settings.PRE_RELEASE_NLP_THRESHOLDS.get(imp_key, 0.99)
+        cert = _nlp_certainty(nlp)
+        if cert < threshold:
+            return False, f"pre-release NLP cert {cert:.4f} < {threshold} ({imp_key} impact)"
+        return True, f"pre-release {imp_key}-impact BULLISH/BEARISH"
 
 
 # ---------------------------------------------------------------------------
@@ -190,10 +244,19 @@ async def analyze_event(calendar_event_id: int) -> Optional[Dict[str, Any]]:
     composite, conf = _composite_and_confidence(dev, nlp)
     result = _build_result(event, dev, nlp, composite, conf)
 
-    try:
-        await upsert_sentiment_result(result)
-    except Exception as exc:
-        logger.error("Failed to save sentiment result for id=%d: %s", calendar_event_id, exc)
+    store, reason = _should_store(result, nlp)
+    if store:
+        try:
+            await upsert_sentiment_result(result)
+            logger.info(
+                "Stored %s signal for '%s' [%s] conf=%.4f pre_release=%s",
+                result["label"], result["event_name"], reason,
+                result["confidence"], result["pre_release"]
+            )
+        except Exception as exc:
+            logger.error("Failed to save sentiment result for id=%d: %s", calendar_event_id, exc)
+    else:
+        logger.debug("Skipped '%s': %s", result.get("event_name"), reason)
 
     return result
 
@@ -225,21 +288,21 @@ async def analyze_recent(hours: int = 24) -> List[Dict[str, Any]]:
         composite, conf = _composite_and_confidence(dev, nlp)
         result = _build_result(event, dev, nlp, composite, conf)
 
-        try:
-            await upsert_sentiment_result(result)
-        except Exception as exc:
-            logger.error("Failed to save result for id=%s: %s", event.get("id"), exc)
+        store, reason = _should_store(result, nlp)
+        if store:
+            try:
+                await upsert_sentiment_result(result)
+            except Exception as exc:
+                logger.error("Failed to save result for id=%s: %s", event.get("id"), exc)
+        else:
+            logger.debug("Skipped '%s': %s", result.get("event_name"), reason)
 
         results.append(result)
 
+    stored = sum(1 for r in results if _should_store(r, finbert.analyze(
+        event_name=r.get("event_name")))[0])
     logger.info("Analyzed %d events (last %dh).", len(results), hours)
     return results
-
-
-async def get_aggregated_signal(window_hours: int) -> AggregatedSignal:
-    """Fetch persisted results for the window and aggregate into one signal."""
-    rows = await fetch_sentiment_window(window_hours)
-    return aggregate_signals(rows, window_hours)
 
 
 async def analyze_today() -> List[Dict[str, Any]]:
@@ -271,8 +334,23 @@ async def analyze_today() -> List[Dict[str, Any]]:
             # Never analyzed before
             to_analyze.append(ev)
         elif last_analyzed < stale_cutoff and has_actual:
-            # Stale result AND actual is now available
+            # Stale result AND actual is now available (post-release upgrade)
             to_analyze.append(ev)
+        elif has_actual and ev.get("existing_label") is not None:
+            # Was analyzed pre-release; actual just arrived → force re-analysis
+            # so deviation score can now contribute
+            # Guard: only re-analyze if result was stored pre-release
+            # (we check deviation_confidence would have been 0 at that time via pre_release flag on result)
+            # Simple heuristic: re-analyze if last analysis was within STALE_RESULT_HOURS*4
+            upgrade_cutoff = dt.datetime.now(timezone.utc) - dt.timedelta(
+                hours=settings.STALE_RESULT_HOURS * 4
+            )
+            if last_analyzed > upgrade_cutoff:
+                logger.debug(
+                    "Re-analyzing pre-release event id=%s (%s) — actual data now available",
+                    ev.get("id"), ev.get("event_name"),
+                )
+                to_analyze.append(ev)
         else:
             logger.debug(
                 "Skipping fresh result for event id=%s (%s)",
@@ -285,6 +363,7 @@ async def analyze_today() -> List[Dict[str, Any]]:
 
     nlp_results = finbert.analyze_batch(to_analyze)
     results: List[Dict[str, Any]] = []
+    stored_count = 0
 
     for event, nlp in zip(to_analyze, nlp_results):
         dev = compute_deviation_score(
@@ -298,12 +377,25 @@ async def analyze_today() -> List[Dict[str, Any]]:
         composite, conf = _composite_and_confidence(dev, nlp)
         result = _build_result(event, dev, nlp, composite, conf)
 
-        try:
-            await upsert_sentiment_result(result)
-        except Exception as exc:
-            logger.error("Failed to save result for id=%s: %s", event.get("id"), exc)
+        store, reason = _should_store(result, nlp)
+        if store:
+            try:
+                await upsert_sentiment_result(result)
+                stored_count += 1
+                logger.info(
+                    "Stored %s signal for '%s' [%s] conf=%.4f pre_release=%s",
+                    result["label"], result["event_name"], reason,
+                    result["confidence"], result["pre_release"]
+                )
+            except Exception as exc:
+                logger.error("Failed to save result for id=%s: %s", event.get("id"), exc)
+        else:
+            logger.debug("Skipped '%s': %s", result.get("event_name"), reason)
 
         results.append(result)
 
-    logger.info("analyze_today: processed %d / %d events.", len(results), len(events))
+    logger.info(
+        "analyze_today: processed %d / %d events, stored %d actionable signals.",
+        len(results), len(events), stored_count
+    )
     return results

@@ -18,6 +18,12 @@ CREATE TABLE IF NOT EXISTS public.ff_sentiment_results (
     impact               TEXT,
     event_name           TEXT,
 
+    event_date           DATE,
+    event_time           TEXT,
+    -- TRUE = analyzed before actual was published (NLP-only leading indicator)
+    -- FALSE = actual data was present at analysis time (deviation+NLP combined)
+    pre_release          BOOLEAN  DEFAULT TRUE,
+
     -- ── Deviation layer (Layer 1) ─────────────────────────────────────────────
     deviation_score      FLOAT,   -- gold-directional deviation  ∈ [-1, +1]
     deviation_confidence FLOAT,   -- 0 = no actual, 0.6 = vs prev, 0.9 = vs forecast
