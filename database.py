@@ -319,3 +319,29 @@ async def upsert_sentiment_result(result: Dict[str, Any]) -> None:
             reasoning,
         )
 
+
+async def cleanup_old_data() -> None:
+    """
+    Deletes all records older than a day.
+    This ensures the database does not accumulate old data over time.
+    Cascades to ff_sentiment_results automatically via the ON DELETE CASCADE constraint.
+    """
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        # Delete from calendar_events.
+        # This will cascade to ff_sentiment_results automatically.
+        await conn.execute("""
+            DELETE FROM ff_calendar_events 
+            WHERE calendar_date < CURRENT_DATE - INTERVAL '1 day'
+               OR calendar_date IS NULL;
+        """)
+        # Clean up orphan event details
+        await conn.execute("""
+            DELETE FROM ff_event_details d
+            WHERE NOT EXISTS (
+                SELECT 1 FROM ff_calendar_events c
+                WHERE c.event_id = d.event_id
+            );
+        """)
+        logger.info("Cleaned up database data older than a day.")
+

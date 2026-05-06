@@ -157,6 +157,13 @@ async def run_pipeline(
         # Phase 2
         if not skip_analysis:
             await run_analysis()
+            
+        # Cleanup
+        try:
+            from database import cleanup_old_data
+            await cleanup_old_data()
+        except Exception as exc:
+            logger.warning("Failed to clean up old data: %s", exc)
 
         if not loop:
             break
@@ -164,7 +171,7 @@ async def run_pipeline(
         logger.info("Sleeping for %d minutes...", interval_minutes)
         await asyncio.sleep(interval_minutes * 60)
 
-    # Cleanup
+    # Final Teardown
     try:
         from database import close_pool
         await close_pool()
